@@ -3905,9 +3905,10 @@ ul.hero-nav-list li {
 }
 
 @media (max-width: 768px) {
-  .footer-social-glass {
+  .footer-columns-grid .footer-social-glass {
     justify-content: center;
     flex-wrap: nowrap;
+    flex-direction: row !important;
   }
 }
 
