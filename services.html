@@ -302,196 +302,83 @@
       </div>
     </section>
 
-    <!-- 2. BESPOKE FLEET SHOWCASE -->
-    <section id="fleet" class="section section-white">
-      <div class="container">
+    <!-- 4. OUR BESPOKE FLEET (EXPEDITION VEHICLE SHOWCASE) -->
+    <section id="fleet-showcase" class="fleet-section">
+      <div class="fleet-container">
+        
         <!-- Section Header -->
-        <div style="text-align: center; max-width: 700px; margin: 0 auto 40px;" class="scroll-reveal">
-          <span style="font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--color-warm-ochre); display: block; margin-bottom: 8px;">EXECUTIVE VEHICLES</span>
-          <h2 style="font-family: var(--font-heading); font-weight: 600; font-size: clamp(36px, 4.5vw, 56px); color: var(--color-text-primary); line-height: 1.15; margin-bottom: 14px;">Our Bespoke Fleet</h2>
-          <p style="font-size: 1rem; color: var(--color-text-secondary); line-height: 1.7;">
-            Sanitized, air-conditioned and professionally maintained vehicles for airport transfers, sightseeing and intercity travel across Northeast India.
-          </p>
+        <div class="fleet-header">
+          <span class="fleet-badge-sub">PREMIUM TRANSPORTATION</span>
+          <h2 class="fleet-main-heading">Vehicles For Every Journey</h2>
+          <div class="fleet-heading-line"></div>
         </div>
 
-        <!-- 3-Column Responsive Card Grid -->
-        <div class="fleet-grid-container">
+        <!-- Category Tabs (Horizontal Scroll on Mobile) -->
+        <div class="fleet-nav-scroll">
+          <button class="fleet-chip active" data-category="hatchback">Hatchback</button>
+          <button class="fleet-chip" data-category="sedan">Sedan</button>
+          <button class="fleet-chip" data-category="muv">MUV</button>
+          <button class="fleet-chip" data-category="fleet">Fleet</button>
+        </div>
 
-          <!-- 1. Swift Dzire -->
-          <div class="fleet-card-compact scroll-reveal">
-            <div>
-              <div class="fleet-card-img-wrapper">
-                <div class="img-placeholder-clean aspect-16-9">
-                  <i data-lucide="car"></i>
-                  <span>PHOTO PLACEHOLDER — Swift Dzire</span>
-                </div>
-              </div>
-              <span class="fleet-category-label">SEDAN CLASS</span>
-              <h3 class="fleet-vehicle-name">Swift Dzire</h3>
-
-              <div class="fleet-pills-row">
-                <span class="fleet-spec-pill">👥 Up to 4 Passengers</span>
-                <span class="fleet-spec-pill">❄ Climate Control</span>
-                <span class="fleet-spec-pill">🧳 Luggage Space</span>
-                <span class="fleet-spec-pill">⛰ Mountain Friendly</span>
-              </div>
-
-              <p class="fleet-description-text">
-                Ideal for couples, airport transfers and comfortable city-to-city travel across Northeast India.
-              </p>
+        <!-- Compact Split Card -->
+        <div class="fleet-card">
+          
+          <!-- Left Column: Visual Container -->
+          <div class="fleet-visual-box">
+            <div class="fleet-img-frame">
+              <img id="fleetImg" src="Photos%20section/fleet_dzire.png" alt="Maruti Dzire" class="fleet-car-image">
             </div>
 
-            <button class="btn-pill-inter btn-gold-solid fleet-cta-btn trigger-booking" data-package="Swift Dzire Rental">
-              Reserve Vehicle
-            </button>
+            <div class="fleet-controls-row">
+              <button id="fleetPrevBtn" class="fleet-btn-circle" aria-label="Previous Vehicle">
+                <i data-lucide="chevron-left"></i>
+              </button>
+              <span class="fleet-counter"><strong id="currentVehicleIndex">01</strong> / <span id="totalVehicleCount">04</span></span>
+              <button id="fleetNextBtn" class="fleet-btn-circle" aria-label="Next Vehicle">
+                <i data-lucide="chevron-right"></i>
+              </button>
+            </div>
           </div>
 
-          <!-- 2. Maruti Ertiga -->
-          <div class="fleet-card-compact scroll-reveal">
-            <div>
-              <div class="fleet-card-img-wrapper">
-                <div class="img-placeholder-clean aspect-16-9">
-                  <i data-lucide="shield"></i>
-                  <span>PHOTO PLACEHOLDER — Maruti Ertiga</span>
-                </div>
-              </div>
-              <span class="fleet-category-label">FAMILY MUV</span>
-              <h3 class="fleet-vehicle-name">Maruti Ertiga</h3>
-
-              <div class="fleet-pills-row">
-                <span class="fleet-spec-pill">👥 Up to 6 Passengers</span>
-                <span class="fleet-spec-pill">❄ Rear AC Vents</span>
-                <span class="fleet-spec-pill">🧳 Family Luggage</span>
-                <span class="fleet-spec-pill">⛰ Mountain Friendly</span>
-              </div>
-
-              <p class="fleet-description-text">
-                Comfortable and economical MUV choice for family tours across Shillong, Kaziranga & Guwahati.
-              </p>
+          <!-- Right Column: Details & Action -->
+          <div class="fleet-details-box">
+            <div class="fleet-title-header">
+              <h3 id="fleetTitle" class="fleet-vehicle-name">MARUTI DZIRE</h3>
+              <span class="fleet-class-tag">Sedan Class</span>
             </div>
 
-            <button class="btn-pill-inter btn-gold-solid fleet-cta-btn trigger-booking" data-package="Maruti Ertiga Rental">
-              Reserve Vehicle
-            </button>
-          </div>
+            <p id="fleetDesc" class="fleet-description-text">
+              Agile, ultra-comfortable executive sedan designed for seamless Guwahati airport transfers and highway drives across Assam & Meghalaya.
+            </p>
 
-          <!-- 3. Toyota Innova Crysta -->
-          <div class="fleet-card-compact scroll-reveal">
-            <div>
-              <div class="fleet-card-img-wrapper">
-                <div class="img-placeholder-clean aspect-16-9">
-                  <i data-lucide="shield-check"></i>
-                  <span>PHOTO PLACEHOLDER — Innova Crysta</span>
-                </div>
+            <!-- Single Column Stack for Clean Text Lines -->
+            <div class="fleet-features-list">
+              <div class="fleet-feature-row">
+                <i data-lucide="check-circle-2"></i>
+                <span>Professional Driver Included</span>
               </div>
-              <span class="fleet-category-label">LUXURY MUV</span>
-              <h3 class="fleet-vehicle-name">Toyota Innova Crysta</h3>
-
-              <div class="fleet-pills-row">
-                <span class="fleet-spec-pill">👥 Up to 7 Passengers</span>
-                <span class="fleet-spec-pill">❄ Captain Seats AC</span>
-                <span class="fleet-spec-pill">🧳 Extra Luggage</span>
-                <span class="fleet-spec-pill">⛰ Mountain Specialist</span>
+              <div class="fleet-feature-row">
+                <i data-lucide="check-circle-2"></i>
+                <span>Commercial Tourist Permit</span>
               </div>
-
-              <p class="fleet-description-text">
-                The Gold Standard for Tawang mountain passes, foggy highways, and luxury long-distance tours.
-              </p>
+              <div class="fleet-feature-row">
+                <i data-lucide="check-circle-2"></i>
+                <span>Sanitized & Deep Cleaned</span>
+              </div>
+              <div class="fleet-feature-row">
+                <i data-lucide="check-circle-2"></i>
+                <span>Guwahati Airport Pickup</span>
+              </div>
             </div>
 
-            <button class="btn-pill-inter btn-gold-solid fleet-cta-btn trigger-booking" data-package="Toyota Innova Rental">
-              Reserve Vehicle
-            </button>
-          </div>
-
-          <!-- 4. Mahindra Scorpio N -->
-          <div class="fleet-card-compact scroll-reveal">
-            <div>
-              <div class="fleet-card-img-wrapper">
-                <div class="img-placeholder-clean aspect-16-9">
-                  <i data-lucide="compass"></i>
-                  <span>PHOTO PLACEHOLDER — Scorpio N</span>
-                </div>
-              </div>
-              <span class="fleet-category-label">EXPEDITION SUV</span>
-              <h3 class="fleet-vehicle-name">Mahindra Scorpio N</h3>
-
-              <div class="fleet-pills-row">
-                <span class="fleet-spec-pill">👥 Up to 6 Passengers</span>
-                <span class="fleet-spec-pill">❄ Dual Zone AC</span>
-                <span class="fleet-spec-pill">🧳 High Clearance</span>
-                <span class="fleet-spec-pill">⛰ 4x4 Mountain Tough</span>
-              </div>
-
-              <p class="fleet-description-text">
-                Rugged luxury SUV built for challenging Himalayan terrains, Off-beat trails & Ziro Valley expeditions.
-              </p>
-            </div>
-
-            <button class="btn-pill-inter btn-gold-solid fleet-cta-btn trigger-booking" data-package="Mahindra Scorpio N Rental">
-              Reserve Vehicle
-            </button>
-          </div>
-
-          <!-- 5. Toyota Fortuner -->
-          <div class="fleet-card-compact scroll-reveal">
-            <div>
-              <div class="fleet-card-img-wrapper">
-                <div class="img-placeholder-clean aspect-16-9">
-                  <i data-lucide="crown"></i>
-                  <span>PHOTO PLACEHOLDER — Toyota Fortuner</span>
-                </div>
-              </div>
-              <span class="fleet-category-label">LUXURY 4X4 SUV</span>
-              <h3 class="fleet-vehicle-name">Toyota Fortuner</h3>
-
-              <div class="fleet-pills-row">
-                <span class="fleet-spec-pill">👥 Up to 7 Passengers</span>
-                <span class="fleet-spec-pill">❄ VIP Climate Control</span>
-                <span class="fleet-spec-pill">🧳 Premium Leather</span>
-                <span class="fleet-spec-pill">⛰ Extreme 4x4</span>
-              </div>
-
-              <p class="fleet-description-text">
-                VIP luxury SUV offering maximum safety, command presence, and effortless power across all mountain terrains.
-              </p>
-            </div>
-
-            <button class="btn-pill-inter btn-gold-solid fleet-cta-btn trigger-booking" data-package="Toyota Fortuner Rental">
-              Reserve Vehicle
-            </button>
-          </div>
-
-          <!-- 6. Tempo Traveller -->
-          <div class="fleet-card-compact scroll-reveal">
-            <div>
-              <div class="fleet-card-img-wrapper">
-                <div class="img-placeholder-clean aspect-16-9">
-                  <i data-lucide="sparkles"></i>
-                  <span>PHOTO PLACEHOLDER — Tempo Traveller</span>
-                </div>
-              </div>
-              <span class="fleet-category-label">VIP PASSENGER COACH</span>
-              <h3 class="fleet-vehicle-name">Tempo Traveller</h3>
-
-              <div class="fleet-pills-row">
-                <span class="fleet-spec-pill">👥 Up to 12 Passengers</span>
-                <span class="fleet-spec-pill">❄ Reclining Seats</span>
-                <span class="fleet-spec-pill">🧳 Large Boot Space</span>
-                <span class="fleet-spec-pill">⛰ Touring Specialist</span>
-              </div>
-
-              <p class="fleet-description-text">
-                Spacious executive minibus tailored for group expeditions, corporate retreats, and multi-family tours.
-              </p>
-            </div>
-
-            <button class="btn-pill-inter btn-gold-solid fleet-cta-btn trigger-booking" data-package="Tempo Traveller Rental">
+            <button id="fleetReserveBtn" class="btn-pill-inter btn-green-solid trigger-booking fleet-cta-btn" data-package="Maruti Dzire Booking">
               Reserve Vehicle
             </button>
           </div>
 
         </div>
+
       </div>
     </section>
 

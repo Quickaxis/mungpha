@@ -267,27 +267,28 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         title: 'Maruti Fronx',
         desc: 'Sleek and modern hatchback perfect for comfortable city tours and smooth highway cruising.',
-        imgSrc: 'Photos section/fleet_fronx.png',
+        imgSrc: 'Photos section/fronxcar.png',
         package: 'Maruti Fronx Booking'
       },
       {
         title: 'Maruti Swift',
         desc: 'Compact, reliable, and highly maneuverable. Excellent for quick transfers and solo travelers.',
-        imgSrc: 'Photos section/fleet_swift.png',
-        package: 'Maruti Swift Booking'
+        imgSrc: 'Photos section/swiftcar.png',
+        package: 'Maruti Swift Booking',
+        imgPos: 'center 70%'
       }
     ],
     sedan: [
       {
         title: 'Maruti Dzire',
         desc: 'The Maruti Dzire is an agile, ultra-comfortable executive sedan designed for seamless Guwahati airport transfers and highway drives.',
-        imgSrc: 'Photos section/fleet_dzire.png',
+        imgSrc: 'Photos section/dezire.png',
         package: 'Maruti Dzire Booking'
       },
       {
         title: 'Hyundai Aura',
         desc: 'Premium sedan offering a smooth ride, excellent legroom, and superior comfort for long road trips.',
-        imgSrc: 'Photos section/fleet_aura.png',
+        imgSrc: 'Photos section/auracar.png',
         package: 'Hyundai Aura Booking'
       }
     ],
@@ -295,27 +296,28 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         title: 'Maruti Ertiga',
         desc: 'Spacious and highly reliable family MUV, ideal for family vacations and group road trips to Shillong and Cherrapunji.',
-        imgSrc: 'Photos section/fleet_ertiga.png',
-        package: 'Maruti Ertiga Booking'
+        imgSrc: 'Photos section/ertigacar.png',
+        package: 'Maruti Ertiga Booking',
+        imgPos: 'center 70%'
       },
       {
         title: 'Toyota Innova Crysta',
         desc: 'The benchmark for premium road travel across Northeast India. Its refined engine and spacious cabin make it the preferred choice for expeditions.',
-        imgSrc: 'Photos section/fleet_innova.png',
+        imgSrc: 'Photos section/innovacar.png',
         package: 'Innova Crysta Booking'
       }
     ],
     fleet: [
       {
-        title: 'Tempo Traveller',
+        title: 'Force Traveller',
         desc: 'Up to 17-seater capacity designed for comfortable long-distance group tours and large family trips across the mountains.',
-        imgSrc: 'Photos section/fleet_tempo_traveller.png',
-        package: 'Tempo Traveller Booking'
+        imgSrc: 'Photos section/forcetraveller.png',
+        package: 'Force Traveller Booking'
       },
       {
         title: 'Force Urbania',
         desc: 'Executive luxury mini-bus with reclining pushback seating, high ceilings, and premium comfort for corporate travel and large groups.',
-        imgSrc: 'Photos section/fleet_traveller.png',
+        imgSrc: 'Photos section/forceurbania.png',
         package: 'Force Urbania Booking'
       }
     ]
@@ -353,6 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (fleetImg) {
           fleetImg.src = data.imgSrc;
           fleetImg.alt = data.title;
+          fleetImg.style.objectPosition = data.imgPos || 'center center';
         }
         
         if (fleetIndexText) {
@@ -478,4 +481,45 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 13. Contact Modal Logic
+  const contactModal = document.getElementById('contactModal');
+  const contactModalClose = document.getElementById('contactModalClose');
+  const triggerContactBtns = document.querySelectorAll('.trigger-contact-modal');
+
+  if (contactModal) {
+    // Open modal
+    triggerContactBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        contactModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scroll
+      });
+    });
+
+    // Close on X button
+    if (contactModalClose) {
+      contactModalClose.addEventListener('click', () => {
+        contactModal.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
+
+    // Close on outside click
+    contactModal.addEventListener('click', (e) => {
+      if (e.target === contactModal) {
+        contactModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && contactModal.classList.contains('active')) {
+        contactModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
 });

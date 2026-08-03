@@ -3121,18 +3121,22 @@ ul.hero-nav-list li {
 
 .fleet-img-frame {
   width: 100%;
-  max-width: 500px;
+  max-width: 700px;
+  aspect-ratio: 7 / 5;
   display: flex;
   justify-content: center;
-  margin-bottom: 24px;
+  align-items: center;
+  margin: 0 auto 24px auto;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .fleet-car-image {
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));
-  transform: scale(1.1);
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
   transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
@@ -3444,5 +3448,209 @@ ul.hero-nav-list li {
   .premium-package-content {
     padding: 32px 20px 24px 20px;
     box-sizing: border-box;
+  }
+}
+
+/* ==========================================================================
+   CONTACT / GET IN TOUCH MODAL (Premium Glassmorphism)
+   ========================================================================== */
+.contact-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+}
+
+.contact-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.contact-modal-glass {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 40px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15), 
+              inset 0 1px 0 rgba(255,255,255,0.4);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  transform: scale(0.95) translateY(10px);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease-out;
+  position: relative;
+  text-align: center;
+}
+
+.contact-modal-overlay.active .contact-modal-glass {
+  transform: scale(1) translateY(0);
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.contact-modal-title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.contact-modal-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 32px;
+}
+
+.contact-modal-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.contact-modal-action-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.contact-modal-action-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.contact-modal-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.contact-modal-action-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.contact-modal-action-desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.btn-contact-primary {
+  width: 100%;
+  background: #22c55e;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+}
+
+.btn-contact-primary:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+}
+
+.btn-contact-outline {
+  width: 100%;
+  background: transparent;
+  color: #22c55e;
+  border: 1.5px solid #22c55e;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-contact-outline:hover {
+  background: rgba(34, 197, 94, 0.1);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .contact-modal-cards-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .contact-modal-glass {
+    padding: 32px 20px;
+  }
+  
+  .contact-modal-title {
+    font-size: 1.8rem;
+  }
+  
+  .contact-modal-action-card {
+    padding: 24px 16px;
   }
 }
