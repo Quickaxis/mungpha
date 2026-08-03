@@ -3873,3 +3873,38 @@ ul.hero-nav-list li {
   background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
   z-index: 1;
 }
+
+/* Premium Glassmorphism Footer Social Icons */
+.footer-social-glass {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.footer-social-glass a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.footer-social-glass a:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(132, 204, 22, 0.5);
+  box-shadow: 0 8px 24px rgba(132, 204, 22, 0.25);
+}
+
+@media (max-width: 768px) {
+  .footer-social-glass {
+    justify-content: center;
+  }
+}
