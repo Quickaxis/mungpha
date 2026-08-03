@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 7. Package Filter Tabs Controller (packages.html & index.html)
   const tabBtns = document.querySelectorAll('.tab-btn[data-filter]');
-  const packageRowCards = document.querySelectorAll('.package-row-card');
+  const packageRowCards = document.querySelectorAll('.premium-package-card');
 
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
       packageRowCards.forEach(card => {
         const category = card.getAttribute('data-category');
         if (filter === 'all' || category === filter) {
-          card.style.display = window.innerWidth <= 900 ? 'flex' : 'grid';
+          card.style.display = 'flex';
           card.classList.add('revealed');
         } else {
           card.style.display = 'none';
@@ -249,93 +249,95 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 11. Fleet Interactive Showcase Controller (Touch Swipe & Car Spawn Animation)
-  // 11. Fleet Interactive Showcase Controller (Smooth Fade Content Swapping)
-  const fleetDots = document.querySelectorAll('.fleet-dot');
+  // 11. Fleet Interactive Showcase Controller (Smooth Categorized Swapping)
+  const fleetCategoryChips = document.querySelectorAll('.fleet-chip');
   const fleetTitle = document.getElementById('fleetTitle');
-  const fleetCap = document.getElementById('fleetCap');
-  const fleetLuggage = document.getElementById('fleetLuggage');
-  const fleetMileage = document.getElementById('fleetMileage');
-  const fleetEngine = document.getElementById('fleetEngine');
   const fleetDesc = document.getElementById('fleetDesc');
   const fleetImg = document.getElementById('fleetImg');
-  const fleetDetailsCol = document.getElementById('fleetDetailsCol');
+  const fleetDetailsCol = document.querySelector('.fleet-details-box');
+  const fleetIndexText = document.getElementById('currentVehicleIndex');
+  const fleetTotalText = document.getElementById('totalVehicleCount');
+  const fleetClassTag = document.querySelector('.fleet-class-tag');
   const fleetReserveBtn = document.getElementById('fleetReserveBtn');
   const fleetPrevBtn = document.getElementById('fleetPrevBtn');
   const fleetNextBtn = document.getElementById('fleetNextBtn');
 
-  const fleetKeys = ['dzire', 'ertiga', 'innova', 'scorpio', 'traveller'];
-  let currentFleetIndex = 2; // Default Innova Crysta
-  let isFleetAnimating = false;
-
-  const fleetData = {
-    dzire: {
-      title: 'Swift Dzire',
-      cap: '4+1 Seats',
-      luggage: '2 Bags',
-      mileage: '22.5 km/l',
-      engine: '1.2L Petrol',
-      desc: 'The Swift Dzire is an agile, ultra-comfortable executive sedan designed for seamless Guwahati airport transfers and highway drives.',
-      imgSrc: 'Photos%20section/fleet_dzire.png',
-      package: 'Swift Dzire Cab Booking'
-    },
-    ertiga: {
-      title: 'Maruti Ertiga',
-      cap: '6+1 Seats',
-      luggage: '3 Bags',
-      mileage: '20.5 km/l',
-      engine: '1.5L Hybrid',
-      desc: 'Spacious and highly reliable family MUV, ideal for family vacations and group road trips to Shillong and Cherrapunji.',
-      imgSrc: 'Photos%20section/fleet_ertiga.png',
-      package: 'Maruti Ertiga Booking'
-    },
-    innova: {
-      title: 'Toyota Innova Crysta',
-      cap: '6+1 / 7+1 Seats',
-      luggage: '4 Bags',
-      mileage: '15.1 km/l',
-      engine: '2.4L Diesel',
-      desc: 'The Toyota Innova Crysta is the benchmark for premium road travel. Its refined diesel engine and spacious cabin make it the preferred choice for expeditions.',
-      imgSrc: 'Photos%20section/fleet_innova.png',
-      package: 'Innova Crysta Booking'
-    },
-    scorpio: {
-      title: 'Mahindra Scorpio Classic',
-      cap: '7+1 Seats',
-      luggage: '3 Bags',
-      mileage: '14.0 km/l',
-      engine: '2.2L Diesel',
-      desc: 'Built for power, the Scorpio Classic is the ultimate choice for conquering rugged mountain roads and high-altitude passes across the Northeast.',
-      imgSrc: 'Photos%20section/fleet_scorpio.png',
-      package: 'Mahindra Scorpio Booking'
-    },
-    traveller: {
-      title: 'Force Urbania',
-      cap: '12+1 / 17+1 Seats',
-      luggage: '10+ Bags',
-      mileage: '11.5 km/l',
-      engine: '2.6L Diesel',
-      desc: 'Executive luxury mini-bus equipped with reclining pushback seating and high ceiling—tailored for large tour groups.',
-      imgSrc: 'Photos%20section/fleet_traveller.png',
-      package: 'Force Urbania Booking'
-    }
+  const categorizedFleetData = {
+    hatchback: [
+      {
+        title: 'Maruti Fronx',
+        desc: 'Sleek and modern hatchback perfect for comfortable city tours and smooth highway cruising.',
+        imgSrc: 'Photos section/fleet_fronx.png',
+        package: 'Maruti Fronx Booking'
+      },
+      {
+        title: 'Maruti Swift',
+        desc: 'Compact, reliable, and highly maneuverable. Excellent for quick transfers and solo travelers.',
+        imgSrc: 'Photos section/fleet_swift.png',
+        package: 'Maruti Swift Booking'
+      }
+    ],
+    sedan: [
+      {
+        title: 'Maruti Dzire',
+        desc: 'The Maruti Dzire is an agile, ultra-comfortable executive sedan designed for seamless Guwahati airport transfers and highway drives.',
+        imgSrc: 'Photos section/fleet_dzire.png',
+        package: 'Maruti Dzire Booking'
+      },
+      {
+        title: 'Hyundai Aura',
+        desc: 'Premium sedan offering a smooth ride, excellent legroom, and superior comfort for long road trips.',
+        imgSrc: 'Photos section/fleet_aura.png',
+        package: 'Hyundai Aura Booking'
+      }
+    ],
+    muv: [
+      {
+        title: 'Maruti Ertiga',
+        desc: 'Spacious and highly reliable family MUV, ideal for family vacations and group road trips to Shillong and Cherrapunji.',
+        imgSrc: 'Photos section/fleet_ertiga.png',
+        package: 'Maruti Ertiga Booking'
+      },
+      {
+        title: 'Toyota Innova Crysta',
+        desc: 'The benchmark for premium road travel across Northeast India. Its refined engine and spacious cabin make it the preferred choice for expeditions.',
+        imgSrc: 'Photos section/fleet_innova.png',
+        package: 'Innova Crysta Booking'
+      }
+    ],
+    fleet: [
+      {
+        title: 'Tempo Traveller',
+        desc: 'Up to 17-seater capacity designed for comfortable long-distance group tours and large family trips across the mountains.',
+        imgSrc: 'Photos section/fleet_tempo_traveller.png',
+        package: 'Tempo Traveller Booking'
+      },
+      {
+        title: 'Force Urbania',
+        desc: 'Executive luxury mini-bus with reclining pushback seating, high ceilings, and premium comfort for corporate travel and large groups.',
+        imgSrc: 'Photos section/fleet_traveller.png',
+        package: 'Force Urbania Booking'
+      }
+    ]
   };
 
-  // Preload Images
-  const preloadedImages = [];
-  fleetKeys.forEach(key => {
-    const img = new Image();
-    img.src = fleetData[key].imgSrc;
-    preloadedImages.push(img);
-  });
+  let currentCategory = 'hatchback';
+  let currentVehicleIndex = 0;
+  let isFleetAnimating = false;
 
-  function updateFleetShowcase(index) {
+  function updateFleetShowcase(cat, index) {
     if (isFleetAnimating) return;
-    if (index < 0) index = fleetKeys.length - 1;
-    if (index >= fleetKeys.length) index = 0;
-    currentFleetIndex = index;
+    
+    const categoryArray = categorizedFleetData[cat];
+    if (!categoryArray) return;
 
-    const key = fleetKeys[index];
-    const data = fleetData[key];
+    if (index < 0) index = categoryArray.length - 1;
+    if (index >= categoryArray.length) index = 0;
+    
+    currentCategory = cat;
+    currentVehicleIndex = index;
+
+    const data = categoryArray[currentVehicleIndex];
 
     if (data) {
       isFleetAnimating = true;
@@ -345,10 +347,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(() => {
         if (fleetTitle) fleetTitle.textContent = data.title;
-        if (fleetCap) fleetCap.textContent = data.cap;
-        if (fleetLuggage) fleetLuggage.textContent = data.luggage;
-        if (fleetMileage) fleetMileage.textContent = data.mileage;
-        if (fleetEngine) fleetEngine.textContent = data.engine;
         if (fleetDesc) fleetDesc.textContent = data.desc;
         if (fleetReserveBtn) fleetReserveBtn.setAttribute('data-package', data.package);
 
@@ -356,12 +354,26 @@ document.addEventListener('DOMContentLoaded', () => {
           fleetImg.src = data.imgSrc;
           fleetImg.alt = data.title;
         }
+        
+        if (fleetIndexText) {
+          fleetIndexText.textContent = String(currentVehicleIndex + 1).padStart(2, '0');
+        }
+        
+        if (fleetTotalText) {
+          fleetTotalText.textContent = String(categoryArray.length).padStart(2, '0');
+        }
+        
+        if (fleetClassTag) {
+          let catName = currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1);
+          if (currentCategory === 'muv') catName = 'MUV';
+          fleetClassTag.textContent = catName + ' Class';
+        }
 
-        fleetDots.forEach((dot, idx) => {
-          if (idx === currentFleetIndex) {
-            dot.classList.add('active');
+        fleetCategoryChips.forEach(chip => {
+          if (chip.getAttribute('data-category') === currentCategory) {
+            chip.classList.add('active');
           } else {
-            dot.classList.remove('active');
+            chip.classList.remove('active');
           }
         });
 
@@ -383,29 +395,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  fleetDots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const newIndex = parseInt(dot.getAttribute('data-index'), 10);
-      if (!isNaN(newIndex) && newIndex !== currentFleetIndex) {
-        updateFleetShowcase(newIndex);
+  fleetCategoryChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const cat = chip.getAttribute('data-category');
+      if (cat !== currentCategory) {
+        updateFleetShowcase(cat, 0);
       }
     });
   });
 
   if (fleetPrevBtn) {
     fleetPrevBtn.addEventListener('click', () => {
-      updateFleetShowcase(currentFleetIndex - 1);
+      updateFleetShowcase(currentCategory, currentVehicleIndex - 1);
     });
   }
 
   if (fleetNextBtn) {
     fleetNextBtn.addEventListener('click', () => {
-      updateFleetShowcase(currentFleetIndex + 1);
+      updateFleetShowcase(currentCategory, currentVehicleIndex + 1);
     });
   }
+  
+  // Initial load
+  updateFleetShowcase('hatchback', 0);
 
   // Touch Swipe Gesture Listener on Mobile
-  const fleetContainer = document.querySelector('.fleet-slider-container');
+  const fleetContainer = document.querySelector('.fleet-card');
   if (fleetContainer) {
     let touchStartX = 0;
     let touchEndX = 0;
@@ -423,10 +438,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const swipeThreshold = 40;
       if (touchEndX < touchStartX - swipeThreshold) {
         // Swiped Left -> Next Vehicle
-        updateFleetShowcase(currentFleetIndex + 1);
+        updateFleetShowcase(currentCategory, currentVehicleIndex + 1);
       } else if (touchEndX > touchStartX + swipeThreshold) {
         // Swiped Right -> Previous Vehicle
-        updateFleetShowcase(currentFleetIndex - 1);
+        updateFleetShowcase(currentCategory, currentVehicleIndex - 1);
       }
     }
   }
@@ -436,7 +451,15 @@ document.addEventListener('DOMContentLoaded', () => {
   faqQuestions.forEach(question => {
     question.addEventListener('click', () => {
       const item = question.parentElement;
-      item.classList.toggle('active');
+      const isActive = item.classList.contains('active');
+      
+      document.querySelectorAll('.faq-item').forEach(faq => {
+        faq.classList.remove('active');
+      });
+      
+      if (!isActive) {
+        item.classList.add('active');
+      }
     });
   });
 

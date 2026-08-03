@@ -41,7 +41,7 @@
         "telephone": "+918822918687",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Bishnu Path, Opposite Oxygen Fitness Gym, Sarumotoria",
+          "streetAddress": "Bishnu Path, Opposite Oxygen Fitness Gym, Dispur",
           "addressLocality": "Guwahati",
           "addressRegion": "Assam",
           "postalCode": "781006",
@@ -155,10 +155,10 @@
 
     <!-- Centered Glassmorphism Content Card Floating Over Scenery -->
     <div class="hero-glass-content-card">
-      <h1 class="hero-main-title">Expeditions to<br>Northeast India</h1>
+      <h1 class="hero-main-title">Explore the Wonders of Northeast India</h1>
       
       <p class="hero-description-text">
-        Luxury cab services, bespoke tours and unforgettable journeys across Assam, Meghalaya, Arunachal Pradesh and Nagaland.
+        Discover handpicked tours, reliable cab services, airport transfers, and customized travel experiences across Assam, Meghalaya, Arunachal Pradesh, and Nagaland — all with trusted local expertise.
       </p>
 
       <div class="hero-button-pair">
@@ -227,6 +227,12 @@
       </div>
     </section>
 
+    <style>
+      #why-us .compact-vt-card:hover {
+        border-color: #84CC16 !important;
+        box-shadow: 0 8px 24px rgba(132, 204, 22, 0.15) !important;
+      }
+    </style>
     <!-- 3. WHY CHOOSE MUNGPHAI (SPLIT 2-COLUMN LAYOUT) -->
     <section id="why-us" class="section section-cream">
       <div class="container">
@@ -234,34 +240,34 @@
           
           <!-- Left: Label + Heading + Short 2-line Description -->
           <div>
-            <span class="label-gold-accent" style="margin-bottom:12px;">OUR COMMITMENT</span>
-            <h2 class="heading-section-60" style="margin-bottom:20px;">Why Travelers Choose MungPhai</h2>
+            <span class="label-gold-accent" style="margin-bottom:12px; color:#84CC16 !important; border-color:rgba(132,204,22,0.3) !important; background: rgba(132,204,22,0.1) !important;">WHY CHOOSE MUNGPHAI</span>
+            <h2 class="heading-section-60" style="margin-bottom:20px;">Why Choose MungPhai?</h2>
             <p style="font-size: 1.1rem; color: var(--color-text-secondary); line-height: 1.7; max-width: 480px;">
-              Guwahati's most trusted luxury travel partner with verified mountain drivers and transparent pricing across Northeast India.
+              At MungPhai, we believe travel is about more than reaching a destination—it's about creating unforgettable memories. With local expertise, transparent pricing, personalized service, and carefully planned journeys across Northeast India, we make every trip comfortable, hassle-free, and memorable.
             </p>
           </div>
 
           <!-- Right: 4 Small Clean Feature Cards -->
           <div class="why-us-right-grid">
             <div class="compact-vt-card">
-              <i data-lucide="map-pin" style="color:var(--color-forest-green);"></i>
+              <i data-lucide="map-pin" style="color:#84CC16;"></i>
               <h4 class="compact-title">Local Expertise</h4>
-              <p class="compact-desc">Authentic Northeast itineraries & hidden gems.</p>
+              <p class="compact-desc">Authentic Northeast itineraries and hidden gems.</p>
             </div>
             <div class="compact-vt-card">
-              <i data-lucide="shield-check" style="color:var(--color-forest-green);"></i>
-              <h4 class="compact-title">Verified Drivers</h4>
-              <p class="compact-desc">Safe, experienced mountain highway chauffeurs.</p>
+              <i data-lucide="car" style="color:#84CC16;"></i>
+              <h4 class="compact-title">Sanitized Luxury Fleet</h4>
+              <p class="compact-desc">Spotless sedans, SUVs, Innova, Tempo Traveller, and Force Urbania maintained to premium standards.</p>
             </div>
             <div class="compact-vt-card">
-              <i data-lucide="banknote" style="color:var(--color-forest-green);"></i>
+              <i data-lucide="banknote" style="color:#84CC16;"></i>
               <h4 class="compact-title">Transparent Fares</h4>
-              <p class="compact-desc">All-inclusive pricing. No hidden surprises.</p>
+              <p class="compact-desc">No hidden charges. Transparent pricing with all costs clearly communicated before booking.</p>
             </div>
             <div class="compact-vt-card">
-              <i data-lucide="phone-call" style="color:var(--color-forest-green);"></i>
+              <i data-lucide="phone-call" style="color:#84CC16;"></i>
               <h4 class="compact-title">24/7 Support</h4>
-              <p class="compact-desc">Round-the-clock assistance during your trip.</p>
+              <p class="compact-desc">Round-the-clock travel assistance before, during, and after your journey.</p>
             </div>
           </div>
 
@@ -270,72 +276,82 @@
     </section>
 
     <!-- 4. OUR BESPOKE FLEET (EXPEDITION VEHICLE SHOWCASE) -->
-    <section id="fleet-showcase" class="section section-white">
-      <div class="container">
-        <!-- Section Title Centered -->
-        <div style="text-align: center; max-width: 640px; margin: 0 auto 48px;" class="scroll-reveal">
-          <span class="label-gold-accent" style="color: var(--color-forest-green); letter-spacing: 2px;">EXECUTIVE TRANSPORTATION</span>
-          <h2 class="heading-section-60">Our Bespoke Fleet</h2>
-          <div style="width: 48px; height: 4px; background: var(--color-forest-green); margin: 12px auto 0; border-radius: 2px;"></div>
+    <section id="fleet-showcase" class="fleet-section">
+      <div class="fleet-container">
+        
+        <!-- Section Header -->
+        <div class="fleet-header">
+          <span class="fleet-badge-sub">PREMIUM TRANSPORTATION</span>
+          <h2 class="fleet-main-heading">Vehicles For Every Journey</h2>
+          <div class="fleet-heading-line"></div>
         </div>
 
-        <!-- Premium Centered Showcase -->
-        <div class="fleet-centered-layout scroll-reveal">
-          <div class="fleet-watermark">MUNGPHAI</div>
+        <!-- Category Tabs (Horizontal Scroll on Mobile) -->
+        <div class="fleet-nav-scroll">
+          <button class="fleet-chip active" data-category="hatchback">Hatchback</button>
+          <button class="fleet-chip" data-category="sedan">Sedan</button>
+          <button class="fleet-chip" data-category="muv">MUV</button>
+          <button class="fleet-chip" data-category="fleet">Fleet</button>
+        </div>
+
+        <!-- Compact Split Card -->
+        <div class="fleet-card">
           
-          <div class="fleet-slider-container">
-            <button id="fleetPrevBtn" class="fleet-arrow-btn left" aria-label="Previous Vehicle">
-              <i data-lucide="chevron-left"></i>
-            </button>
-            <div class="fleet-image-centered">
-              <img id="fleetImg" src="Photos section/fleet_innova.png" alt="Toyota Innova Crysta" loading="lazy" class="fleet-element">
+          <!-- Left Column: Visual Container -->
+          <div class="fleet-visual-box">
+            <div class="fleet-img-frame">
+              <img id="fleetImg" src="Photos%20section/fleet_dzire.png" alt="Maruti Dzire" class="fleet-car-image">
             </div>
-            <button id="fleetNextBtn" class="fleet-arrow-btn right" aria-label="Next Vehicle">
-              <i data-lucide="chevron-right"></i>
-            </button>
+
+            <div class="fleet-controls-row">
+              <button id="fleetPrevBtn" class="fleet-btn-circle" aria-label="Previous Vehicle">
+                <i data-lucide="chevron-left"></i>
+              </button>
+              <span class="fleet-counter"><strong id="currentVehicleIndex">01</strong> / <span id="totalVehicleCount">04</span></span>
+              <button id="fleetNextBtn" class="fleet-btn-circle" aria-label="Next Vehicle">
+                <i data-lucide="chevron-right"></i>
+              </button>
+            </div>
           </div>
 
-          <div class="fleet-details-centered fleet-element" id="fleetDetailsCol">
-            <span class="label-gold-accent" style="color: var(--color-forest-green); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 8px; display: inline-block;">EXECUTIVE SUV</span>
-            <h3 id="fleetTitle" class="heading-title-48" style="font-size: 2.2rem; margin: 0 0 16px; color: var(--color-text-primary); text-transform: uppercase; letter-spacing: 0.5px;">Toyota Innova Crysta</h3>
-            
-            <!-- Premium 2x2 Specifications -->
-            <div id="fleetSpecsList" class="fleet-spec-pills-grid">
-              <div class="fleet-spec-pill-premium">
-                <span>👥</span> <span id="fleetCap">6+1 / 7+1 Seats</span>
-              </div>
-              <div class="fleet-spec-pill-premium">
-                <span>🧳</span> <span id="fleetLuggage">4 Large Bags</span>
-              </div>
-              <div class="fleet-spec-pill-premium">
-                <span>⛽</span> <span id="fleetMileage">15.1 km/l</span>
-              </div>
-              <div class="fleet-spec-pill-premium">
-                <span>⚙️</span> <span id="fleetEngine">2.4L Diesel</span>
-              </div>
+          <!-- Right Column: Details & Action -->
+          <div class="fleet-details-box">
+            <div class="fleet-title-header">
+              <h3 id="fleetTitle" class="fleet-vehicle-name">MARUTI DZIRE</h3>
+              <span class="fleet-class-tag">Sedan Class</span>
             </div>
 
-            <!-- Description -->
-            <p id="fleetDesc" class="fleet-desc-text" style="max-width:540px; margin: 0 auto 24px; font-size:1.05rem; line-height:1.6;">
-              The Toyota Innova Crysta is the benchmark for premium road travel across Northeast India. Its refined diesel engine and spacious cabin make it the preferred choice for expeditions.
+            <p id="fleetDesc" class="fleet-description-text">
+              Agile, ultra-comfortable executive sedan designed for seamless Guwahati airport transfers and highway drives across Assam & Meghalaya.
             </p>
 
-            <!-- CTA Button -->
-            <button id="fleetReserveBtn" class="btn-pill-inter btn-green-solid trigger-booking fleet-btn-wide" data-package="Innova Crysta Booking" style="margin-bottom: 16px;">
+            <!-- Single Column Stack for Clean Text Lines -->
+            <div class="fleet-features-list">
+              <div class="fleet-feature-row">
+                <i data-lucide="check-circle-2"></i>
+                <span>Professional Driver Included</span>
+              </div>
+              <div class="fleet-feature-row">
+                <i data-lucide="check-circle-2"></i>
+                <span>Commercial Tourist Permit</span>
+              </div>
+              <div class="fleet-feature-row">
+                <i data-lucide="check-circle-2"></i>
+                <span>Sanitized & Deep Cleaned</span>
+              </div>
+              <div class="fleet-feature-row">
+                <i data-lucide="check-circle-2"></i>
+                <span>Guwahati Airport Pickup</span>
+              </div>
+            </div>
+
+            <button id="fleetReserveBtn" class="btn-pill-inter btn-green-solid trigger-booking fleet-cta-btn" data-package="Maruti Dzire Booking">
               Reserve Vehicle
             </button>
-            
-            <!-- Bottom: Dot Indicators -->
-            <div class="fleet-dots-container" id="fleetDots">
-              <!-- Dots injected via JS or hardcoded -->
-              <div class="fleet-dot" data-index="0"></div>
-              <div class="fleet-dot" data-index="1"></div>
-              <div class="fleet-dot active" data-index="2"></div>
-              <div class="fleet-dot" data-index="3"></div>
-              <div class="fleet-dot" data-index="4"></div>
-            </div>
           </div>
+
         </div>
+
       </div>
     </section>
 
@@ -354,7 +370,7 @@
           <div class="compact-hz-card">
             <div style="width:32px; height:32px; border-radius:50%; background:var(--color-forest-green); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">1</div>
             <div>
-              <h3 class="compact-title">Pick Destination</h3>
+              <h3 class="compact-title">Pickup Destination</h3>
               <p class="compact-desc">Select your desired tour package or vehicle.</p>
             </div>
           </div>
@@ -362,7 +378,7 @@
             <div style="width:32px; height:32px; border-radius:50%; background:var(--color-forest-green); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0;">2</div>
             <div>
               <h3 class="compact-title">Customize Tour</h3>
-              <p class="compact-desc">Provide dates, passengers, and pick-up point.</p>
+              <p class="compact-desc">Provide your travel dates, number of passengers, and pickup location.</p>
             </div>
           </div>
           <div class="compact-hz-card">
@@ -385,45 +401,87 @@
           <p class="text-muted">Everything you need to know about traveling in Northeast India with MungPhai.</p>
         </div>
 
-        <div class="faq-accordion-stack scroll-reveal">
-          
           <div class="faq-item">
             <button class="faq-question">
-              <span>Do you provide pick-up from Lokpriya Gopinath Bordoloi Guwahati Airport (GAU)?</span>
-              <i data-lucide="chevron-down" style="width:20px; height:20px;"></i>
+              <span>How many guests can you accommodate?</span>
+              <i data-lucide="chevron-down" style="width:20px; height:20px; flex-shrink:0;"></i>
             </button>
             <div class="faq-answer">
-              Yes! We provide 24/7 airport meet & greet and direct transfers from LGBI Guwahati Airport (GAU) and Guwahati Railway Station to any destination in Guwahati, Shillong, Cherrapunji, Kaziranga, and Tawang.
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">
+                  We can arrange vehicles for solo travelers, couples, families, and groups of up to 21+ guests. Our fleet includes Swift Dzire, Ertiga, Innova Crysta, Scorpio Classic, and Force Urbania to suit every group size.
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>Are inner line permits (ILP) required for Arunachal Pradesh and Nagaland?</span>
-              <i data-lucide="chevron-down" style="width:20px; height:20px;"></i>
+              <span>Can I customize my itinerary?</span>
+              <i data-lucide="chevron-down" style="width:20px; height:20px; flex-shrink:0;"></i>
             </button>
             <div class="faq-answer">
-              Yes, Inner Line Permits (ILP) are mandatory for Indian tourists visiting Arunachal Pradesh and Nagaland. Our trip coordinators handle complete online ILP processing for all our guests prior to travel.
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">
+                  Absolutely. Every trip is fully customizable. You can choose your destinations, travel dates, hotels, sightseeing, pickup and drop locations, and travel preferences.
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>Are your cabs and mountain drivers experienced in hill terrains?</span>
-              <i data-lucide="chevron-down" style="width:20px; height:20px;"></i>
+              <span>Which destinations do you cover?</span>
+              <i data-lucide="chevron-down" style="width:20px; height:20px; flex-shrink:0;"></i>
             </button>
             <div class="faq-answer">
-              All MungPhai drivers are local Northeast mountain experts with over 8+ years of driving experience in heavy fog, steep mountain passes (Sela Pass, Tawang, Sohra), and winding hill highways.
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">
+                  We offer tours and cab services across Assam, Meghalaya, Arunachal Pradesh, Nagaland, Bhutan, and other popular destinations in Northeast India.
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>What is the cancellation and refund policy?</span>
-              <i data-lucide="chevron-down" style="width:20px; height:20px;"></i>
+              <span>Do you provide airport pickup and drop?</span>
+              <i data-lucide="chevron-down" style="width:20px; height:20px; flex-shrink:0;"></i>
             </button>
             <div class="faq-answer">
-              We offer flexible cancellation. Full refunds are provided for cancellations made at least 72 hours prior to the scheduled pick-up time.
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">
+                  Yes. We provide airport transfers from Lokpriya Gopinath Bordoloi International Airport (Guwahati) along with hotel, railway station, and city pickups.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What vehicles are available?</span>
+              <i data-lucide="chevron-down" style="width:20px; height:20px; flex-shrink:0;"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">
+                  Our premium fleet includes Swift Dzire, Maruti Ertiga, Toyota Innova Crysta, Mahindra Scorpio Classic, and Force Urbania, all maintained for maximum comfort and reliability.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I book my trip?</span>
+              <i data-lucide="chevron-down" style="width:20px; height:20px; flex-shrink:0;"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <div class="faq-answer-content">
+                  Simply contact us via WhatsApp or phone, share your travel plan, and we'll provide a customized itinerary and quotation. Once confirmed, we'll handle everything.
+                </div>
+              </div>
             </div>
           </div>
 
@@ -462,7 +520,7 @@
           <div>
             <h4 style="font-family:var(--font-heading); font-weight:700; color:#ffffff; font-size:1.2rem; margin-bottom:16px;">Contact</h4>
             <p style="font-size:0.9rem; line-height:1.8; color:rgba(255,255,255,0.75);">
-              Sarumotoria, Guwahati, Assam 781006<br>
+              Dispur, Guwahati, Assam 781006<br>
               Phone: <a href="tel:+918822918687" style="color:var(--color-warm-ochre); font-weight:600;">+91 88229 18687</a><br>
               Instagram: <a href="https://instagram.com/mung_phai" target="_blank" style="color:var(--color-warm-ochre); font-weight:600;">@mung_phai</a>
             </p>
