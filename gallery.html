@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <title>Traveler Photography Gallery | Northeast India Moments | MungPhai Trips & Tours</title>
+  <meta name="description" content="Browse traveler moments across Meghalaya waterfalls, Assam Kaziranga safaris, Tawang snow passes, and MungPhai luxury fleet photography.">
+  <meta name="keywords" content="Meghalaya Photos, Kaziranga Photography, Tawang Snow Photos, Northeast Travel Gallery, MungPhai Gallery">
+  <link rel="canonical" href="https://mungphaitripsandtours.com/gallery.html">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <div id="cursorGlow"></div>
+
+  <!-- APPLE-LIKE SMART STICKY NAVIGATION HEADER -->
+  <nav id="stickyNav" class="sticky-nav-header visible">
+    <div class="container">
+      <div class="sticky-nav-inner">
+        <a href="index.html" class="hero-brand-emblem">
+          <img src="Photos section/logo.jpg" alt="MungPhai Emblem">
+          <span class="hero-brand-title">MungPhai</span>
+        </a>
+
+        <ul class="hero-nav-list">
+          <li class="hero-nav-item"><a href="index.html">Home</a></li>
+          <li class="hero-nav-item"><a href="about.html">About</a></li>
+          <li class="hero-nav-item"><a href="packages.html">Packages</a></li>
+          <li class="hero-nav-item"><a href="services.html">Services</a></li>
+          <li class="hero-nav-item"><a href="index.html#contact">Contact</a></li>
+        </ul>
+
+        <button class="btn-pill-inter btn-gold-solid btn-sm trigger-booking" data-package="Gallery Header Enquiry">
+          <i data-lucide="compass"></i> Book Now
+        </button>
+
+        <button id="hamburgerToggle" class="hamburger-btn-mobile" aria-label="Open mobile menu">
+          <i data-lucide="menu" style="width:26px; height:26px;"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div id="mobileMenuDrawer" class="mobile-menu-drawer">
+    <div class="drawer-top-bar">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <img src="Photos section/logo.jpg" alt="Logo" width="40" height="40" style="border-radius:50%; border:1.5px solid var(--color-gold-accent);">
+        <span class="font-playfair" style="font-size:1.4rem; font-weight:500;">MungPhai</span>
+      </div>
+      <button id="menuCloseBtn" style="background:none; border:none; font-size:2rem; cursor:pointer; color:var(--color-text-primary);">&times;</button>
+    </div>
+
+    <ul class="drawer-nav-links">
+      <li><a href="index.html" class="drawer-link">Home</a></li>
+      <li><a href="about.html" class="drawer-link">About</a></li>
+      <li><a href="packages.html" class="drawer-link">Packages</a></li>
+      <li><a href="services.html" class="drawer-link">Services</a></li>
+      <li><a href="index.html#contact" class="drawer-link">Contact</a></li>
+    </ul>
+
+    <div>
+      <button class="btn-pill-inter btn-gold-solid trigger-booking" data-package="Drawer Reservation" style="width:100%; min-height:56px;">
+        <i data-lucide="compass"></i> Book Now
+      </button>
+    </div>
+  </div>
+
+  <main style="padding-top: 100px;">
+
+    <!-- GALLERY HERO HEADER -->
+    <section class="section section-white" style="padding: 60px 0 20px;">
+      <div class="container">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;" class="scroll-reveal">
+          <span class="label-gold-accent">VISUAL CHRONICLES</span>
+          <h1 class="heading-section-60">Northeast India Gallery</h1>
+          <p class="text-muted" style="font-size: 1.125rem;">
+            A curated visual story of traveler expeditions across Meghalaya, Assam, Arunachal Pradesh, and Nagaland.
+          </p>
+        </div>
+
+        <!-- Destination Filter Tabs -->
+        <div class="tabs-container scroll-reveal">
+          <button class="tab-btn active" data-gallery-filter="all">All Photos</button>
+          <button class="tab-btn" data-gallery-filter="meghalaya">Meghalaya</button>
+          <button class="tab-btn" data-gallery-filter="assam">Assam</button>
+          <button class="tab-btn" data-gallery-filter="arunachal">Arunachal</button>
+          <button class="tab-btn" data-gallery-filter="fleet">Fleet Showcase</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PINTEREST MASONRY GALLERY GRID -->
+    <section class="section section-cream">
+      <div class="container">
+        <div class="gallery-collage-grid scroll-reveal">
+          
+          <div class="collage-item tall gallery-item" data-gallery-cat="meghalaya">
+            <div class="img-placeholder-clean">
+              <i data-lucide="cloud-rain"></i>
+              <span>PHOTO PLACEHOLDER — Nohkalikai Waterfalls Cherrapunji</span>
+            </div>
+          </div>
+
+          <div class="collage-item gallery-item" data-gallery-cat="arunachal">
+            <div class="img-placeholder-clean">
+              <i data-lucide="mountain-snow"></i>
+              <span>PHOTO PLACEHOLDER — Sela Pass 13,700ft Snow Pass</span>
+            </div>
+          </div>
+
+          <div class="collage-item wide gallery-item" data-gallery-cat="fleet">
+            <div class="img-placeholder-clean">
+              <i data-lucide="car"></i>
+              <span>PHOTO PLACEHOLDER — MungPhai Toyota Innova Fleet Lineup</span>
+            </div>
+          </div>
+
+          <div class="collage-item gallery-item" data-gallery-cat="meghalaya">
+            <div class="img-placeholder-clean">
+              <i data-lucide="water"></i>
+              <span>PHOTO PLACEHOLDER — Dawki Umngot Transparent Boating</span>
+            </div>
+          </div>
+
+          <div class="collage-item tall gallery-item" data-gallery-cat="assam">
+            <div class="img-placeholder-clean">
+              <i data-lucide="trees"></i>
+              <span>PHOTO PLACEHOLDER — Kaziranga Rhino Safari Expedition</span>
+            </div>
+          </div>
+
+          <div class="collage-item gallery-item" data-gallery-cat="arunachal">
+            <div class="img-placeholder-clean">
+              <i data-lucide="landmark"></i>
+              <span>PHOTO PLACEHOLDER — Tawang Monastery Golden Temple</span>
+            </div>
+          </div>
+
+          <div class="collage-item gallery-item" data-gallery-cat="fleet">
+            <div class="img-placeholder-clean">
+              <i data-lucide="sparkles"></i>
+              <span>PHOTO PLACEHOLDER — Force Urbania VIP Luxury Coach</span>
+            </div>
+          </div>
+
+          <div class="collage-item wide gallery-item" data-gallery-cat="assam">
+            <div class="img-placeholder-clean">
+              <i data-lucide="palmtree"></i>
+              <span>PHOTO PLACEHOLDER — Majuli River Island Cultural Satras</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="minimal-white-footer">
+    <div class="container">
+      <div class="glass-floating-card footer-glass-card">
+        <div class="footer-columns-grid">
+          <div>
+            <div style="display:flex; align-items:center; gap:14px; margin-bottom:16px;">
+              <img src="Photos section/logo.jpg" alt="MungPhai Emblem" width="40" height="40" style="border-radius:50%; border:1.5px solid var(--color-gold-accent);">
+              <span class="font-playfair" style="font-size:1.5rem; font-weight:500; color:var(--color-text-primary);">MungPhai Trips & Tours</span>
+            </div>
+            <p style="font-size:0.95rem; color:var(--color-text-secondary); max-width:400px; line-height:1.8;">
+              Guwahati's premier travel agency and cab rental service. Safe, comfortable, and reliable tour packages across Assam, Meghalaya, Arunachal Pradesh, and Nagaland.
+            </p>
+          </div>
+
+          <div>
+            <h4 style="font-family:var(--font-heading); font-weight:500; color:var(--color-text-primary); font-size:1.1rem; margin-bottom:16px;">Navigation</h4>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:0.9rem;">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="packages.html">Packages</a></li>
+              <li><a href="fleet.html">Fleet</a></li>
+              <li><a href="transfers.html">Transfers</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 style="font-family:var(--font-heading); font-weight:500; color:var(--color-text-primary); font-size:1.1rem; margin-bottom:16px;">Contact</h4>
+            <p style="font-size:0.9rem; line-height:1.8; color:var(--color-text-secondary);">
+              Sarumotoria, Guwahati, Assam 781006<br>
+              Phone: <a href="tel:+918822918687" style="color:var(--color-gold-accent); font-weight:600;">+91 88229 18687</a><br>
+              Instagram: <a href="https://instagram.com/mung_phai" target="_blank" style="color:var(--color-gold-accent); font-weight:600;">@mung_phai</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom-line">
+          <span>© 2026 MungPhai Trips & Tours. All Rights Reserved.</span>
+          <span>Curated Photography Gallery.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- STICKY 72px NATIVE iOS BOTTOM ACTION BAR -->
+  <div id="mobileStickyBar" class="mobile-sticky-bar">
+    <div class="mobile-sticky-inner">
+      <a href="tel:+918822918687" class="sticky-action-btn">
+        <i data-lucide="phone"></i>
+        <span>Call</span>
+      </a>
+      <a href="https://wa.me/918822918687" target="_blank" class="sticky-action-btn">
+        <i data-lucide="message-circle"></i>
+        <span>WhatsApp</span>
+      </a>
+      <button class="sticky-action-btn trigger-booking" data-package="Sticky Gallery Booking" style="border:none; cursor:pointer;">
+        <i data-lucide="calendar"></i>
+        <span>Book Now</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div id="bookingModal" class="modal-overlay">
+    <div class="glass-floating-card modal-content-glass-white">
+      <button id="modalClose" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <h3 class="heading-card-36" style="margin-bottom:8px;">Reserve Your MungPhai Journey</h3>
+      <p class="text-muted" style="font-size:0.9rem; margin-bottom:24px;">Fill out the details below for instant WhatsApp confirmation.</p>
+
+      <form id="bookingForm" style="display:flex; flex-direction:column; gap:16px;">
+        <div class="form-group-clean">
+          <label for="modalPackage">Selected Trip / Vehicle</label>
+          <input type="text" id="modalPackage" class="form-input-clean" readonly style="background:rgba(201,162,76,0.1); border-color:var(--color-gold-accent);">
+        </div>
+
+        <div class="form-group-clean">
+          <label for="modalName">Full Name</label>
+          <input type="text" id="modalName" class="form-input-clean" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group-clean">
+          <label for="modalPhone">Phone / Mobile Number</label>
+          <input type="tel" id="modalPhone" class="form-input-clean" placeholder="+91 98765 43210" required>
+        </div>
+
+        <div class="form-group-clean">
+          <label for="modalDate">Expected Travel Date</label>
+          <input type="date" id="modalDate" class="form-input-clean" required>
+        </div>
+
+        <button type="submit" class="btn-pill-inter btn-gold-solid" style="margin-top:10px;">
+          <i data-lucide="send"></i> Confirm via WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
