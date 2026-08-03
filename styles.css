@@ -440,11 +440,12 @@ ul.hero-nav-list li {
   border: none;
   color: var(--color-text-primary);
   cursor: pointer;
-  padding: 6px;
+  padding: 8px;
   display: none;
   align-items: center;
   justify-content: center;
   z-index: 30;
+  overflow: visible;
 }
 
 /* --------------------------------------------------------------------------
@@ -2318,7 +2319,7 @@ ul.hero-nav-list li {
 
 .footer-columns-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 60px;
   margin-bottom: 60px;
 }
@@ -2328,7 +2329,7 @@ ul.hero-nav-list li {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.7);
 }
