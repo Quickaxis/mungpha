@@ -3755,3 +3755,95 @@ ul.hero-nav-list li {
     min-height: 300px;
   }
 }
+
+/* ==========================================================================
+   TRAVEL MEMORIES GALLERY SECTION
+   ========================================================================== */
+.travel-memories-wrapper {
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.travel-memories-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.travel-memories-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tm-large-image-container {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-crisp-card);
+  background-color: var(--color-bg-sage);
+}
+
+.tm-large-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.tm-large-image.fade-out {
+  opacity: 0;
+}
+
+.tm-thumbnails-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+.tm-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.tm-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.tm-thumb:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.tm-thumb:hover img {
+  transform: scale(1.05);
+}
+
+.tm-thumb.active-thumb {
+  border-color: var(--color-forest-green);
+  box-shadow: 0 0 0 2px rgba(23, 107, 70, 0.2);
+}
+
+@media (max-width: 992px) {
+  .travel-memories-wrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .tm-thumbnails-row {
+    gap: 8px;
+  }
+}

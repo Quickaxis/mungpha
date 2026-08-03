@@ -195,60 +195,6 @@
   <!-- MAIN EDITORIAL CONTENT -->
   <main>
 
-    <!-- 2. POPULAR DESTINATIONS (3-CARD MASONRY IMAGE GALLERY) -->
-    <section id="destinations" class="section section-white">
-      <div class="container">
-        <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:20px;" class="scroll-reveal">
-          <div>
-            <span class="label-gold-accent">CURATED REGIONS</span>
-            <h2 class="heading-section-60">Popular Destinations</h2>
-          </div>
-          <a href="packages.html" class="btn-pill-inter">All Destinations <i data-lucide="arrow-right"></i></a>
-        </div>
-
-        <div class="destinations-masonry-gallery scroll-reveal">
-          
-          <!-- Meghalaya (Large Card - Left Column) -->
-          <div class="dest-masonry-card-left">
-            <div class="dest-gallery-item">
-              <img src="Photos%20section/meghalyaimage..png" alt="Meghalaya Waterfalls & Living Root Bridges" loading="lazy">
-              <div class="dest-gallery-overlay">
-                <h3 class="dest-gallery-title">Meghalaya</h3>
-                <a href="packages.html" class="btn-gallery-cta">Explore Trips <i data-lucide="arrow-right" style="width:16px; height:16px;"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column (Arunachal Pradesh Top & Assam Bottom) -->
-          <div class="dest-masonry-right-col">
-            
-            <!-- Arunachal Pradesh (Top Right) -->
-            <div class="dest-masonry-card-small">
-              <div class="dest-gallery-item">
-                <img src="Photos%20section/Arunachal.png" alt="Arunachal Pradesh Tawang Monastery & Sela Pass" loading="lazy">
-                <div class="dest-gallery-overlay">
-                  <h3 class="dest-gallery-title">Arunachal Pradesh</h3>
-                  <a href="packages.html" class="btn-gallery-cta">Explore Trips <i data-lucide="arrow-right" style="width:16px; height:16px;"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Assam (Bottom Right) -->
-            <div class="dest-masonry-card-small">
-              <div class="dest-gallery-item">
-                <img src="Photos%20section/assam.png" alt="Assam Kaziranga Rhino Safari & Tea Gardens" loading="lazy">
-                <div class="dest-gallery-overlay">
-                  <h3 class="dest-gallery-title">Assam</h3>
-                  <a href="packages.html" class="btn-gallery-cta">Explore Trips <i data-lucide="arrow-right" style="width:16px; height:16px;"></i></a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </section>
 
     <style>
       #why-us .compact-vt-card:hover {
@@ -511,6 +457,53 @@
         </div>
       </div>
     </section>
+    <!-- TRAVEL MEMORIES GALLERY -->
+    <section id="travel-memories" class="section section-white">
+      <div class="container">
+        
+        <div class="travel-memories-wrapper scroll-reveal">
+          <!-- Left Column -->
+          <div class="travel-memories-left">
+            <h2 class="heading-section-60" style="margin-bottom: 24px; line-height: 1.1;">
+              Wonders of <br>
+              <span style="color: var(--color-forest-green);">Travel Memories Gallery</span>
+            </h2>
+            <p class="text-muted" style="font-size: 1.125rem; max-width: 450px;">
+              Explore unforgettable moments captured across Northeast India. From breathtaking mountains and waterfalls to vibrant villages and hidden gems, every picture tells the story of a journey with MungPhai.
+            </p>
+          </div>
+
+          <!-- Right Column -->
+          <div class="travel-memories-right">
+            <!-- Large Image -->
+            <div class="tm-large-image-container">
+              <img src="Photos section/reveiw1.png" id="tm-main-image" class="tm-large-image" alt="Travel Memories Featured" loading="lazy">
+            </div>
+            
+            <!-- Thumbnails Row -->
+            <div class="tm-thumbnails-row">
+              <div class="tm-thumb active-thumb" onclick="swapGalleryImage(this, 'Photos section/reveiw1.png')">
+                <img src="Photos section/reveiw1.png" alt="Thumbnail 1" loading="lazy">
+              </div>
+              <div class="tm-thumb" onclick="swapGalleryImage(this, 'Photos section/reveiw2.png')">
+                <img src="Photos section/reveiw2.png" alt="Thumbnail 2" loading="lazy">
+              </div>
+              <div class="tm-thumb" onclick="swapGalleryImage(this, 'Photos section/reveiw3.png')">
+                <img src="Photos section/reveiw3.png" alt="Thumbnail 3" loading="lazy">
+              </div>
+              <div class="tm-thumb" onclick="swapGalleryImage(this, 'Photos section/reveiw4.png')">
+                <img src="Photos section/reveiw4.png" alt="Thumbnail 4" loading="lazy">
+              </div>
+              <div class="tm-thumb" onclick="swapGalleryImage(this, 'Photos section/reveiw5.png')">
+                <img src="Photos section/reveiw5.png" alt="Thumbnail 5" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- 8. LOCATION SECTION -->
     <section id="location" class="section section-cream">
       <div class="container">

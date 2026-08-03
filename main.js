@@ -267,13 +267,13 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         title: 'Maruti Fronx',
         desc: 'Sleek and modern hatchback perfect for comfortable city tours and smooth highway cruising.',
-        imgSrc: 'Photos section/fronxcar.png',
+        imgSrc: 'Photos section/fronxcarfixed.png',
         package: 'Maruti Fronx Booking'
       },
       {
         title: 'Maruti Swift',
         desc: 'Compact, reliable, and highly maneuverable. Excellent for quick transfers and solo travelers.',
-        imgSrc: 'Photos section/swiftcar.png',
+        imgSrc: 'Photos section/swiftcarfixed.jpg',
         package: 'Maruti Swift Booking',
         imgPos: 'center 70%'
       }
@@ -282,13 +282,13 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         title: 'Maruti Dzire',
         desc: 'The Maruti Dzire is an agile, ultra-comfortable executive sedan designed for seamless Guwahati airport transfers and highway drives.',
-        imgSrc: 'Photos section/dezire.png',
+        imgSrc: 'Photos section/Dezirecarfixed.png',
         package: 'Maruti Dzire Booking'
       },
       {
         title: 'Hyundai Aura',
         desc: 'Premium sedan offering a smooth ride, excellent legroom, and superior comfort for long road trips.',
-        imgSrc: 'Photos section/auracar.png',
+        imgSrc: 'Photos section/whiteauracarfixed.png',
         package: 'Hyundai Aura Booking'
       }
     ],
@@ -296,14 +296,14 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         title: 'Maruti Ertiga',
         desc: 'Spacious and highly reliable family MUV, ideal for family vacations and group road trips to Shillong and Cherrapunji.',
-        imgSrc: 'Photos section/ertigacar.png',
+        imgSrc: 'Photos section/ertigacarfixed.png',
         package: 'Maruti Ertiga Booking',
         imgPos: 'center 70%'
       },
       {
         title: 'Toyota Innova Crysta',
         desc: 'The benchmark for premium road travel across Northeast India. Its refined engine and spacious cabin make it the preferred choice for expeditions.',
-        imgSrc: 'Photos section/innovacar.png',
+        imgSrc: 'Photos section/innovacarfixed.png',
         package: 'Innova Crysta Booking'
       }
     ],
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         title: 'Force Urbania',
         desc: 'Executive luxury mini-bus with reclining pushback seating, high ceilings, and premium comfort for corporate travel and large groups.',
-        imgSrc: 'Photos section/forceurbania.png',
+        imgSrc: 'Photos section/forceurbaniacarfixed.png',
         package: 'Force Urbania Booking'
       }
     ]
@@ -523,3 +523,29 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+/* ==========================================================================
+   TRAVEL MEMORIES GALLERY LOGIC
+   ========================================================================== */
+window.swapGalleryImage = function(clickedElement, newImageSrc) {
+  const mainImage = document.getElementById('tm-main-image');
+  
+  // Only animate if the image is actually changing
+  if (mainImage && !mainImage.src.includes(newImageSrc)) {
+    // 1. Add fade-out class
+    mainImage.classList.add('fade-out');
+    
+    // 2. Wait for opacity transition (0.4s matching CSS)
+    setTimeout(() => {
+      // Swap source
+      mainImage.src = newImageSrc;
+      
+      // Remove fade-out class to fade back in
+      mainImage.classList.remove('fade-out');
+    }, 400); // 400ms delay matches CSS transition duration
+  }
+
+  // 3. Update active thumbnail state
+  const thumbs = document.querySelectorAll('.tm-thumb');
+  thumbs.forEach(thumb => thumb.classList.remove('active-thumb'));
+  clickedElement.classList.add('active-thumb');
+};
