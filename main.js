@@ -181,16 +181,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // 9. Modal Reservation Window Controller
   const modal = document.getElementById('bookingModal');
   const modalClose = document.getElementById('modalClose');
-  const modalPackageInput = document.getElementById('modalPackage');
+  const modalWhatsappBtn = document.getElementById('modalWhatsappBtn');
   const bookBtns = document.querySelectorAll('.trigger-booking');
 
   bookBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const packageName = btn.getAttribute('data-package') || 'Northeast Expedition';
-      if (modalPackageInput) {
-        modalPackageInput.value = packageName;
+      
+      if (modalWhatsappBtn) {
+        const text = `Hello MungPhai Trips & Tours,\n\nI am interested in the package:\n\n${packageName}\n\nPlease share the itinerary, pricing, and availability.`;
+        modalWhatsappBtn.href = `https://wa.me/918822918687?text=${encodeURIComponent(text)}`;
       }
+      
       if (modal) {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -212,24 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 10. Modal Form Submission -> Instant WhatsApp Builder
-  const bookingForm = document.getElementById('bookingForm');
-  if (bookingForm) {
-    bookingForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('modalName').value;
-      const phone = document.getElementById('modalPhone').value;
-      const pkg = document.getElementById('modalPackage').value;
-      const date = document.getElementById('modalDate').value;
 
-      const text = `Hello MungPhai Trips & Tours!\nI would like to reserve/enquire about:\n- *Trip/Vehicle*: ${pkg}\n- *Name*: ${name}\n- *Phone*: ${phone}\n- *Travel Date*: ${date}`;
-      const whatsappUrl = `https://wa.me/918822918687?text=${encodeURIComponent(text)}`;
-      
-      window.open(whatsappUrl, '_blank');
-      modal.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    });
-  }
 
   // 11. Contact Section Form Submission
   const contactForm = document.getElementById('contactSectionForm');

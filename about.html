@@ -309,37 +309,42 @@
   </div>
 
   <!-- BOOKING MODAL -->
-  <div id="bookingModal" class="modal-overlay">
-    <div class="modal-content-glass-white">
-      <button id="modalClose" class="modal-close-btn" aria-label="Close modal">&times;</button>
-      <h3 class="heading-card-36" style="margin-bottom:8px;">Reserve Your MungPhai Journey</h3>
-      <p class="text-muted" style="font-size:0.9rem; margin-bottom:24px;">Fill out the details below for instant WhatsApp confirmation.</p>
-
-      <form id="bookingForm" style="display:flex; flex-direction:column; gap:16px;">
-        <div class="form-group-clean">
-          <label for="modalPackage">Selected Trip / Vehicle</label>
-          <input type="text" id="modalPackage" class="form-input-clean" readonly style="background:var(--color-bg-sage); border-color:var(--color-forest-green);">
+  <div id="bookingModal" class="contact-modal-overlay">
+    <div class="contact-modal-glass">
+      <button id="modalClose" class="contact-modal-close" aria-label="Close modal">&times;</button>
+      
+      <h3 class="contact-modal-title">Book This Package</h3>
+      <p class="contact-modal-subtitle">Choose your preferred way to connect with us.</p>
+      
+      <div class="contact-modal-cards-container">
+        <!-- WhatsApp Card -->
+        <div class="contact-modal-action-card">
+          <div class="contact-modal-icon-wrapper">
+            <i data-lucide="message-circle" style="width: 32px; height: 32px; color: #22c55e;"></i>
+          </div>
+          <h4 class="contact-modal-action-title">Book via WhatsApp</h4>
+          <p class="contact-modal-action-desc">
+            Chat with our travel team and receive an instant quotation.
+          </p>
+          <a href="#" target="_blank" id="modalWhatsappBtn" class="btn-contact-primary">
+            <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i> Open WhatsApp
+          </a>
         </div>
-
-        <div class="form-group-clean">
-          <label for="modalName">Full Name</label>
-          <input type="text" id="modalName" class="form-input-clean" placeholder="Enter your name" required>
+        
+        <!-- Call Us Card -->
+        <div class="contact-modal-action-card">
+          <div class="contact-modal-icon-wrapper">
+            <i data-lucide="phone" style="width: 32px; height: 32px; color: #22c55e;"></i>
+          </div>
+          <h4 class="contact-modal-action-title">Call Our Team</h4>
+          <p class="contact-modal-action-desc">
+            Speak directly with our travel expert.
+          </p>
+          <a href="tel:+918822918687" class="btn-contact-outline">
+            <i data-lucide="phone" style="width: 18px; height: 18px;"></i> Call Now
+          </a>
         </div>
-
-        <div class="form-group-clean">
-          <label for="modalPhone">Phone / Mobile Number</label>
-          <input type="tel" id="modalPhone" class="form-input-clean" placeholder="+91 98765 43210" required>
-        </div>
-
-        <div class="form-group-clean">
-          <label for="modalDate">Expected Travel Date</label>
-          <input type="date" id="modalDate" class="form-input-clean" required>
-        </div>
-
-        <button type="submit" class="btn-pill-inter btn-gold-solid" style="margin-top:10px;">
-          <i data-lucide="send"></i> Confirm via WhatsApp
-        </button>
-      </form>
+      </div>
     </div>
   </div>
 
