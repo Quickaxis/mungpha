@@ -327,6 +327,18 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentVehicleIndex = 0;
   let isFleetAnimating = false;
 
+  // Preload all fleet images
+  const preloadedFleetImages = [];
+  Object.values(categorizedFleetData).forEach(cat => {
+    cat.forEach(vehicle => {
+      if (vehicle.imgSrc) {
+        const img = new Image();
+        img.src = vehicle.imgSrc;
+        preloadedFleetImages.push(img);
+      }
+    });
+  });
+
   function updateFleetShowcase(cat, index) {
     if (isFleetAnimating) return;
     
@@ -344,57 +356,54 @@ document.addEventListener('DOMContentLoaded', () => {
     if (data) {
       isFleetAnimating = true;
 
-      if (fleetImg) fleetImg.classList.add('fleet-fading-out');
-      if (fleetDetailsCol) fleetDetailsCol.classList.add('fleet-fading-out');
+      // Update text details instantly (no fade on the entire card)
+      if (fleetTitle) fleetTitle.textContent = data.title;
+      if (fleetDesc) fleetDesc.textContent = data.desc;
+      if (fleetReserveBtn) fleetReserveBtn.setAttribute('data-package', data.package);
+      
+      if (fleetIndexText) {
+        fleetIndexText.textContent = String(currentVehicleIndex + 1).padStart(2, '0');
+      }
+      if (fleetTotalText) {
+        fleetTotalText.textContent = String(categoryArray.length).padStart(2, '0');
+      }
+      
+      if (fleetClassTag) {
+        let catName = currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1);
+        if (currentCategory === 'muv') catName = 'MUV';
+        fleetClassTag.textContent = catName + ' Class';
+      }
 
-      setTimeout(() => {
-        if (fleetTitle) fleetTitle.textContent = data.title;
-        if (fleetDesc) fleetDesc.textContent = data.desc;
-        if (fleetReserveBtn) fleetReserveBtn.setAttribute('data-package', data.package);
+      fleetCategoryChips.forEach(chip => {
+        if (chip.getAttribute('data-category') === currentCategory) {
+          chip.classList.add('active');
+        } else {
+          chip.classList.remove('active');
+        }
+      });
 
-        if (fleetImg) {
+      // Smoothly transition image only
+      if (fleetImg) {
+        fleetImg.style.transition = 'opacity 300ms ease-out, transform 300ms ease-out';
+        fleetImg.style.opacity = '0';
+        
+        setTimeout(() => {
           fleetImg.src = data.imgSrc;
           fleetImg.alt = data.title;
           fleetImg.style.objectPosition = data.imgPos || 'center center';
-        }
-        
-        if (fleetIndexText) {
-          fleetIndexText.textContent = String(currentVehicleIndex + 1).padStart(2, '0');
-        }
-        
-        if (fleetTotalText) {
-          fleetTotalText.textContent = String(categoryArray.length).padStart(2, '0');
-        }
-        
-        if (fleetClassTag) {
-          let catName = currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1);
-          if (currentCategory === 'muv') catName = 'MUV';
-          fleetClassTag.textContent = catName + ' Class';
-        }
-
-        fleetCategoryChips.forEach(chip => {
-          if (chip.getAttribute('data-category') === currentCategory) {
-            chip.classList.add('active');
-          } else {
-            chip.classList.remove('active');
-          }
-        });
-
-        if (fleetImg) {
-          fleetImg.classList.remove('fleet-fading-out');
-          fleetImg.classList.add('fleet-fading-in');
-        }
-        if (fleetDetailsCol) {
-          fleetDetailsCol.classList.remove('fleet-fading-out');
-          fleetDetailsCol.classList.add('fleet-fading-in');
-        }
-
-        setTimeout(() => {
-          if (fleetImg) fleetImg.classList.remove('fleet-fading-in');
-          if (fleetDetailsCol) fleetDetailsCol.classList.remove('fleet-fading-in');
-          isFleetAnimating = false;
+          
+          // Force reflow
+          void fleetImg.offsetWidth;
+          
+          fleetImg.style.opacity = '1';
+          
+          setTimeout(() => {
+            isFleetAnimating = false;
+          }, 300);
         }, 300);
-      }, 300);
+      } else {
+        isFleetAnimating = false;
+      }
     }
   }
 
@@ -422,32 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial load
   updateFleetShowcase('hatchback', 0);
 
-  // Touch Swipe Gesture Listener on Mobile
-  const fleetContainer = document.querySelector('.fleet-card');
-  if (fleetContainer) {
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    fleetContainer.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    fleetContainer.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    }, { passive: true });
-
-    function handleSwipe() {
-      const swipeThreshold = 40;
-      if (touchEndX < touchStartX - swipeThreshold) {
-        // Swiped Left -> Next Vehicle
-        updateFleetShowcase(currentCategory, currentVehicleIndex + 1);
-      } else if (touchEndX > touchStartX + swipeThreshold) {
-        // Swiped Right -> Previous Vehicle
-        updateFleetShowcase(currentCategory, currentVehicleIndex - 1);
-      }
-    }
-  }
+  // Touch swipe listener removed as per requirements
 
   // 12. FAQ Accordion Toggle Controller
   const faqQuestions = document.querySelectorAll('.faq-question');

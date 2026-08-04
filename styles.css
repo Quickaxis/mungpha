@@ -3792,6 +3792,7 @@ ul.hero-nav-list li {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   transition: opacity 0.4s ease-in-out;
 }
 
@@ -3930,5 +3931,51 @@ ul.hero-nav-list li {
   .why-us-three-col {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+}
+
+/* About Company Story - Premium Compact Layout */
+.company-story-card {
+  padding: 32px !important;
+}
+
+.company-story-card .editorial-text-block p {
+  font-size: 1.05rem !important;
+  color: var(--color-text-secondary);
+  line-height: 1.6 !important;
+  margin-bottom: 12px !important;
+}
+
+.company-story-card .editorial-text-block p:last-of-type {
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 992px) {
+  .company-story-card.editorial-row-card {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    padding: 24px !important;
+  }
+  
+  .company-story-card .company-img-container {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Wider crop for mobile/tablet */
+  }
+
+  .company-story-card .editorial-text-block p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 10px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .company-story-card {
+    padding: 20px !important;
+  }
+  
+  .company-story-card .company-img-container {
+    aspect-ratio: 4 / 3;
   }
 }
