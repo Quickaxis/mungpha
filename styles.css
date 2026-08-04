@@ -2997,17 +2997,25 @@ ul.hero-nav-list li {
   .compact-vt-card {
     display: flex !important;
     flex-direction: column !important;
+    justify-content: flex-start !important;
     align-items: flex-start !important;
     gap: 10px !important;
-    height: auto !important;
-    min-height: 110px !important;
-    max-height: 180px !important;
+    height: 100% !important;
+    min-height: 160px !important;
     padding: 20px !important;
     text-align: left !important;
     background: #FFFFFF !important;
     border-radius: 20px !important;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
     border: 1px solid #E5E9E4 !important;
+    overflow: hidden !important;
+  }
+  .compact-vt-card .compact-title {
+    font-size: clamp(16px, 5.5vw, 22px) !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+    max-width: 100% !important;
   }
   .compact-vt-card i {
     width: 32px !important;
