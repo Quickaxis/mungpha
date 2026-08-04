@@ -131,6 +131,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // 7c. Handle URL parameters for automatic tab selection (Packages page)
+  const urlParams = new URLSearchParams(window.location.search);
+  const regionParam = urlParams.get('region');
+  if (regionParam && (window.location.pathname.includes('packages.html') || window.location.pathname.includes('packages'))) {
+    const targetTabBtn = document.querySelector(`.tab-btn[data-filter="${regionParam}"]`);
+    if (targetTabBtn) {
+      // Small delay to ensure DOM is ready and scroll is smooth
+      setTimeout(() => {
+        targetTabBtn.click();
+        
+        // Scroll to the tabs container
+        const tabsContainer = document.querySelector('.tabs-container');
+        if (tabsContainer) {
+          const yOffset = -80; // Offset for sticky header
+          const y = tabsContainer.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({top: y, behavior: 'smooth'});
+        }
+      }, 300);
+    }
+  }
+
+  // 7d. Destination Cards Navigation Logic
+  const destinationCards = document.querySelectorAll('.dest-gallery-item');
+  destinationCards.forEach(card => {
+    // Make entire card look clickable
+    card.style.cursor = 'pointer';
+    
+    // Disable default button click so card click handles it uniformly
+    const ctaBtn = card.querySelector('.btn-gallery-cta');
+    if (ctaBtn) {
+      ctaBtn.addEventListener('click', (e) => e.preventDefault());
+    }
+
+    card.addEventListener('click', function() {
+      const titleEl = this.querySelector('.dest-gallery-title');
+      if (titleEl) {
+        let region = titleEl.textContent.trim().toLowerCase().replace(/\s+/g, '-');
+        
+        // Map common destination names to their filter values
+        if (region.includes('arunachal')) {
+          region = 'arunachal';
+        }
+        
+        window.location.href = `packages.html?region=${region}`;
+      }
+    });
+  });
+
   // 7b. Mobile Package Destinations Expander (+ More)
   function initMobileDestinationExpander() {
     document.querySelectorAll('.package-tags-flex').forEach(container => {
