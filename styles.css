@@ -2311,7 +2311,7 @@ ul.hero-nav-list li {
 }
 
 .footer-glass-card {
-  padding: 60px;
+  padding: 60px 60px 24px 60px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-card);
@@ -2875,7 +2875,7 @@ ul.hero-nav-list li {
   }
 
   .footer-glass-card {
-    padding: 28px 20px;
+    padding: 28px 20px 16px 20px;
   }
 
   .footer-columns-grid {
